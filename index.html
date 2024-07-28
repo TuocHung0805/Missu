@@ -42,36 +42,56 @@
   <body>
         <div id="ask" class="container">
             <div >
-                <h1 class = "header_text">Do you wanna go out with me?</h1>
+                <h1 class = "header_text">Nếu cậu rảnh thì đi coi phim với bé nha?</h1>
             </div>
             <div class="gif_container">
                 <img src="image/ask.gif" alt="Cute animated illustration">
             </div>
             <div class = "buttons">
-                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
-                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+                <button class="btn" id = "yesButton" onclick="nextPage()">Dạaa</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="secondPage()">Đ*o</button>
             </div>
-            <video id="novideo" width="0" height="0" controls>
-                <source src="image/SadMoment.mp4" 
-                   type="video/mp4">
-            </video>
+            <audio id="novideo" width="0" height="0" controls>
+                <source src="image/blonde-redhead-for-the-damaged-coda-audiotrimmer.mp4" 
+                   type="audio/mp3">
+            </audio>
         </div>
         <div id="ans" class="container">
             <div >
-                <h1 class = "header_text">Yeeeyyyy!!</h1>
+                <h1 class = "header_text">Ngonnnn!!</h1>
+            </div>
+            <!-- <div class="gif_container">
+                <img src="image/ans.gif" alt="Cute animated illustration">
+            </div> -->
+            <div class="gif_container">
+                <img src="image/gif1.gif" alt="Cute animated illustration">
+            </div>
+            <div style="margin-top: 50px;">
+                <p style="text-align: center; font-size: 25px;">Có gì nói bé để bé sắp xếp mua vé trước với dìa sớm nhe <span style="color: red;">❤</span></p>
+            </div>
+            <audio  id="ansvideo" width="0" height="0" controls>
+                <source src="image/kids_cheering.mp3" 
+                   type="audio/mp3">
+            </audio>
+        </div>
+        <div id="ans2" class="container" style="display: none;">
+            <div >
+                <h1 class = "header_text">Cho cậu chọn lần cuối đó!!</h1>
             </div>
             <div class="gif_container">
-                <img src="image/ans.gif" alt="Cute animated illustration">
+                <img src="image/572.gif" alt="">
             </div>
-            <div class="gif_container qrimage">
-                <img src="image/siddharth_gabu_qr.png" onclick="window.open('https://www.instagram.com/siddharth_gabu/')" alt="Insta Profile QR code">
+            <div class = "buttons" style="margin-top: 50px;">
+                <button class="btn" id = "yesButton" onclick="nextPage()" style=" margin-left: auto; margin-right: auto;">Tui sẽ đi, được chưa!</button>
             </div>
-            <video id="ansvideo" width="0" height="0" controls>
-                <source src="image/KidsCheering.mp4" 
-                   type="video/mp4">
-            </video>
+            <div style="margin-top: 50px;">
+                <p style="text-align: center;">Hong thấy nút "hong đi" chứ gì, có ý kiến gì liên hệ FB bé nhé, bé cảm ơn!!</p>
+            </div>
+            <audio id="novideo" width="0" height="0" controls>
+                <source src="image/blonde-redhead-for-the-damaged-coda-audiotrimmer.mp4" 
+                   type="audio/mp3">
+            </audio>
         </div>
-    </body> 
     <script>
 
         var debounce = function(fn, t = 1000) {
@@ -91,6 +111,7 @@
         function nextPage() {
             //window.location.href = "yes.html";
             document.getElementById('ans').style.display = 'block';
+            document.getElementById('ans2').style.display = 'none';
             document.getElementById('ask').style.display = 'none';
             document.getElementById('novideo').pause();
             document.getElementById('ansvideo').play();
@@ -102,6 +123,14 @@
             document.getElementById('noButton').style.left = `${x}px`;
             document.getElementById('noButton').style.top = `${y}px`;
             playAudio();
+        }
+
+        function secondPage(){
+            document.getElementById('ans2').style.display = 'block';
+            document.getElementById('ask').style.display = 'none';
+            document.getElementById('ans').style.display = 'none';
+            document.getElementById('novideo').play();
+            document.getElementById('ansvideo').pause();
         }
 
     </script> 
